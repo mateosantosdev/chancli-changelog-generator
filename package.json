@@ -1,6 +1,6 @@
 {
   "name": "chancli-changelog-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Auto changelog generator",
   "main": "dist/index.js",
   "scripts": {
