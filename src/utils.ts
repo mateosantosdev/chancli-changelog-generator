@@ -22,9 +22,9 @@ export const convertCommitsInPlainText = (commits: COMMIT_LIST): string => {
       }\r\n`;
     }
     for (const commitContent of commits[commitType]) {
-      const { hash, shortHash, commitMessage, date, author, email } =
+      const { shortHash, commitMessage, date, author, email } =
         commitContent;
-      plainText += `* [${shortHash}](${COMMIT_URL}/${hash}) ${commitMessage} | ${date} | ${author} - ${email}\r\n`;
+      plainText += `* ${shortHash} - ${commitMessage} | ${date} | ${author} - ${email}\r\n`;
     }
   }
   return plainText;
