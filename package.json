@@ -2,7 +2,7 @@
   "name": "chancli-changelog-generator",
   "version": "1.1.1",
   "description": "Auto changelog generator",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "start": "tsc && node dist/index.js",
