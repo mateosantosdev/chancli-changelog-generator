@@ -26,6 +26,10 @@ export const fetch = async () => {
       throw new Error("No tags");
     }
 
+    if (tags.length < 2) {
+      throw new Error("You need at lease two Git tags in your project");
+    }
+
     const compare = await cmd(`${COMPARE_TAGS_COMMAND} ${tags[1]}..${tags[0]}`);
     const commits = convertStringToArray(compare, COMMIT_SEPARATOR);
     commits.pop();
