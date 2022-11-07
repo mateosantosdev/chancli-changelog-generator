@@ -1,5 +1,12 @@
 # Chancli Changelog Generator
 
+[![Latest npm version](https://img.shields.io/npm/v/chancli-changelog-generator.svg)](https://www.npmjs.com/package/chancli-changelog-generator)
+
+## Description
+
+Generate automatic CHANGELOG.md with the conventional standard commits added since the last release.
+
+For more info about visit [conventional commits](https://www.conventionalcommits.org/) website.
 ## Installation
 
 ```npm install -g chancli-changelog-generator```
