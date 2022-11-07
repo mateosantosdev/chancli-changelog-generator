@@ -1,6 +1,6 @@
 {
   "name": "chancli-changelog-generator",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Auto changelog generator",
   "main": "src/index.ts",
   "scripts": {
@@ -20,12 +20,12 @@
   "homepage": "https://github.com/mateosantosdev/chancli-changelog-generator",
   "devDependencies": {
     "@types/node": "^18.6.2",
-    "shelljs": "^0.8.5",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "conventional-changelog-config-spec": "^2.1.0",
-    "semver": "^7.3.7"
+    "semver": "^7.3.7",
+    "shelljs": "^0.8.5"
   },
   "keywords": [
     "automatic",
