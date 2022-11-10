@@ -1,6 +1,7 @@
 import { COMMIT_TYPES, COMMIT_LIST } from "./types/commits";
 import { CHANGELOG_FILE, CHANGELOG_MARK } from "./lib/tags";
 import { readFile, writeFile } from "./lib/system";
+import chalk from "chalk";
 
 export const COMMIT_URL = process.env.COMMIT_URL;
 
@@ -22,8 +23,7 @@ export const convertCommitsInPlainText = (commits: COMMIT_LIST): string => {
       }\r\n`;
     }
     for (const commitContent of commits[commitType]) {
-      const { shortHash, commitMessage, date, author, email } =
-        commitContent;
+      const { shortHash, commitMessage, date, author, email } = commitContent;
       plainText += `* ${shortHash} - ${commitMessage} | ${date} | ${author} - ${email}\r\n`;
     }
   }
@@ -52,4 +52,16 @@ export const generateChangelog = async (
     changelogFile.slice(idx);
 
   await writeFile(CHANGELOG_FILE, newContent);
+};
+
+export const printInfoMessage = (msg: string): void => {
+  console.log("* " + chalk.cyan(msg));
+};
+
+export const printSuccessMessage = (msg: string): void => {
+  console.log("* " + chalk.green(msg) + "\n");
+};
+
+export const printErrorMessage = (error: any): void => {
+  console.log(chalk.red(error));
 };

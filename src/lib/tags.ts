@@ -1,11 +1,12 @@
-const semver = require("semver");
-const shell = require("shelljs");
 import { cmd } from "./system";
 import {
   convertStringToArray,
   buildCommitTypesArray,
   convertCommitsInPlainText,
   generateChangelog,
+  printSuccessMessage,
+  printInfoMessage,
+  printErrorMessage
 } from "../utils";
 import { COMMIT_TYPES, COMMIT, COMMIT_LIST } from "../types/commits";
 
@@ -69,10 +70,12 @@ export const fetch = async () => {
     const changeLogTitle = `\r\n### ${tags[0]}\r\n`;
 
     const commitsInPlainText = convertCommitsInPlainText(PARSED_COMMITS);
-
+    
+    printInfoMessage('Generating CHANGELOG.md...');
     await generateChangelog(changeLogTitle, commitsInPlainText);
+    printSuccessMessage(`CHANGELOG.md generated with ${commits.length} commits`);
 
   } catch (e: any) {
-    console.log(e);
+    printErrorMessage(e);
   }
 };
